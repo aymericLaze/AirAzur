@@ -1,6 +1,6 @@
 <?php
     
-    require dirname(__FILE__)."requeteSQL.php";
+    require dirname(__FILE__)."requetesSQL.php";
     
     //recuperation de la liste des vols
     function getLesVols()
