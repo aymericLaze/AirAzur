@@ -1,0 +1,9 @@
+afficher les vols
+    envoi sur formulaire reservation
+afficher les reservations
+    bouton pour génerer PDF de la réservation
+faire v_formulaire.php
+    numVol, infoclient, place réservé
+    entrer info dans BDD
+    trigger ? enlever dans nb place dispo
+faire le css du formulaire    
