@@ -7,5 +7,5 @@
  */
 ?>
 <div id="reservation">
-    Ceci est la page reservation
+    
 </div>
