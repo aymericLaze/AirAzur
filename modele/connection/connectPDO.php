@@ -1,5 +1,5 @@
 <?php
-    
+    //fonction de connexion a la base de donnee
     function connect()
     {
         include 'connect.php';

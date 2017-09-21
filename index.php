@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include 'modele/sql/funtion.php';
+        include 'modele/sql/fontion.php';
         // put your code here
         if(!isset($_REQUEST['action'])){
             $action='accueil';
@@ -36,6 +36,9 @@ and open the template in the editor.
                 //affiche la vue reservation
                 include './vues/v_reservation.php';
                 break;
+            case "formulaire":
+                //affiche ka vue des formulaires
+                include './vues/v_formulaire.php';
         }
         ?>
     </body>
