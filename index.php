@@ -37,8 +37,9 @@ and open the template in the editor.
                 include './vues/v_reservation.php';
                 break;
             case "formulaire":
-                //affiche ka vue des formulaires
+                //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
+                break;
         }
         ?>
     </body>
