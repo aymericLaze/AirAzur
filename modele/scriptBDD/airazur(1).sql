@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 21 Septembre 2017 à 08:16
+-- Généré le :  Jeu 21 Septembre 2017 à 08:49
 -- Version du serveur :  5.7.11
 -- Version de PHP :  5.6.19
 
@@ -43,6 +43,36 @@ INSERT INTO `aeroport` (`idAeroport`, `ville`, `pays`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `client`
+--
+
+CREATE TABLE `client` (
+  `idClient` int(11) NOT NULL,
+  `nomClient` varchar(30) DEFAULT NULL,
+  `prenomClient` varchar(30) DEFAULT NULL,
+  `adresseClient` varchar(50) DEFAULT NULL,
+  `villeClient` varchar(30) DEFAULT NULL,
+  `CPClient` int(5) DEFAULT NULL,
+  `numTelClient` varchar(14) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `reservation`
+--
+
+CREATE TABLE `reservation` (
+  `idReservation` int(11) NOT NULL,
+  `idVols` varchar(10) DEFAULT NULL,
+  `idClient` int(11) DEFAULT NULL,
+  `prixTotal` int(11) DEFAULT NULL,
+  `nbPlaceReservee` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `vols`
 --
 
@@ -75,6 +105,20 @@ ALTER TABLE `aeroport`
   ADD PRIMARY KEY (`idAeroport`);
 
 --
+-- Index pour la table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`idClient`);
+
+--
+-- Index pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`idReservation`),
+  ADD KEY `idVols` (`idVols`),
+  ADD KEY `idClient` (`idClient`);
+
+--
 -- Index pour la table `vols`
 --
 ALTER TABLE `vols`
@@ -91,6 +135,16 @@ ALTER TABLE `vols`
 --
 ALTER TABLE `aeroport`
   MODIFY `idAeroport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT pour la table `client`
+--
+ALTER TABLE `client`
+  MODIFY `idClient` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT pour la table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `idReservation` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
