@@ -15,6 +15,7 @@
         
         if($connexion)
         {  
-            //$requete =  
+            //requete sql :
+            //Select * From vols where place <> 0
         }
    }
