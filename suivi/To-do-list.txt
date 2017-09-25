@@ -17,3 +17,5 @@ faire page après formulaire qui récupère les infos et demande une validation
         //$sql=select prix from vols where idVols=$idVols ;
            return $places*$sql;
 Ajouter des boutons retour et accueil un peu partout
+
+/!\ REGLER BUG D'ENCODAGE
