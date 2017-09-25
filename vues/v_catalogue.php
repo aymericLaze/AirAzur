@@ -6,16 +6,19 @@
         <?php
             while($vol = $lesVols->fetch(PDO::FETCH_OBJ))
             {
-             echo "<tr>"
-                . "<td>$vol->idVols</td>"
-                . "<td>$vol->aeroportDepart</td>"
-                . "<td>$vol->aeroportArrivee</td>"
-                . "<td>$vol->dateDepart</td>"
-                . "<td>$vol->dateArrivee</td>"
-                . "<td>$vol->prix ?</td>"
-                . "<td>$vol->place</td>"
-                . "<td><a href='index.php?action=ajoutReservation&vol='.$vol->idVols>Réserver</a> >"
-                . "</tr>";
+                $numVol = $vol->idVols;
+        ?>
+        <tr>
+            <td><?php echo $numVol ?></td>
+            <td><?php echo $vol->aeroportDepart?></td>
+            <td><?php echo $vol->aeroportArrivee?></td>
+            <td><?php echo $vol->dateDepart?></td>
+            <td><?php echo $vol->dateArrivee?></td>
+            <td><?php echo $vol->prix ?></td>
+            <td><?php echo $vol->place?></td>
+            <td><a href='index.php?action=formulaire&vol=<?php echo $numVol ?>'>Réserver</a> </td>
+        </tr>
+        <?php
             }
         ?>
     </table>
