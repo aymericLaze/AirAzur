@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8" />
         <link rel="stylesheet" href="./css/cssGeneral.css" />
         <title></title>
     </head>
