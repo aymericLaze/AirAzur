@@ -37,8 +37,26 @@ and open the template in the editor.
                 include './vues/v_reservation.php';
                 break;
             case "formulaire":
+                $idVols=$_REQUEST["vol"];
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
+                break;
+            case "validationReservation":
+                //affiche la vue récapitulative de la reservation
+                //faire test possible ou pas de reserver vol
+                //récuperer prix total
+                //if test(nombre de place valablre) is true -> faire ajout réservation
+                //else renvoyer sur formulaire
+                $idVols=$_REQUEST["idVols"];
+                $nom=$_REQUEST["Nom"];
+                $prenom=$_REQUEST["Prenom"];
+                $adresse=$_REQUEST["Adresse"];
+                $cp=$_REQUEST["CP"];
+                $ville=$_REQUEST["Ville"];
+                $tel=$_REQUEST["NumTel"];
+                $placeRes=$_REQUEST["Place"];
+                $prixTotal=prixTotal($idVols,$placeRes);
+                include './vues/v_validationReservation.php';
                 break;
             case "ajoutReservation":
                 $nom=$_REQUEST["Nom"];

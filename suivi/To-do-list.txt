@@ -12,3 +12,9 @@ Tester connexion globale dans fonctions.php
 faire page après formulaire qui récupère les infos et demande une validation
     la réservation en affichant le prix total (faire le test si il y a assez
     de place à ce niveau la)
+    -Faire fonction prixTotal($idVols,$places)
+        //$sql=select prix from vols where idVols=$idVols ;
+           return $places*$sql;
+Voir si au lieu de faire passer en post/get les variables on peut pas faire
+    une session.
+Ajouter des boutons retour et accueil un peu partout
