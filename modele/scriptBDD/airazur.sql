@@ -60,7 +60,6 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `codePostalClient` int(5) NOT NULL,
   `villeClient` varchar(30) NOT NULL,
   `telClient` varchar(20) NOT NULL,
-  `melClient` varchar(50) NOT NULL,
   `prixTotal` int(11) DEFAULT NULL,
   `nbPlaceReservee` int(11) DEFAULT NULL,
   PRIMARY KEY (`idReservation`),
