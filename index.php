@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        include 'modele/sql/fontion.php';
+        include 'modele/sql/fonctions.php';
         // put your code here
         if(!isset($_REQUEST['action'])){
             $action='accueil';
