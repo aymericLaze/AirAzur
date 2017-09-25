@@ -2,7 +2,7 @@
     //fonction de connexion a la base de donnee
     function connect()
     {
-        include 'connect.php';
+        include 'configPDO.php';
         
         try
         {
@@ -10,7 +10,7 @@
         }
         catch(PDOException $message)
         {
-            echo "probleme de connection".$message->getMessage();
+            echo "probleme de connection ".$message->getMessage();
         }
     }
 ?>

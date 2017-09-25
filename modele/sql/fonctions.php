@@ -3,8 +3,8 @@
     //recuperation de la liste des vols
     function getLesVols()
     {
-        //appel au fichier permettant la connection  a la bd
-        require dirname(__FILE__)."../connction/connectPDO.php";
+        //appel au fichier permettant la connection a la bd
+        include "connectPDO.php";
         
         $connexion = connect();
         
