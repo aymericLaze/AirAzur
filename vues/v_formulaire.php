@@ -1,6 +1,6 @@
 <?php
 ?>
-<form action="./index.php" method="POST">
+<form action="./index.php?action=ajoutRes" method="POST">
     <!-- a faire récuperer -->
     <label>Nom:<input type="text" name="Nom" value="" /></label><br/>
     <label>Prenom:<input type="text" name="Prenom" value="" /></label><br/>

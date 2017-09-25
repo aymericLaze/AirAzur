@@ -3,7 +3,7 @@ afficher les vols
 afficher les reservations
     bouton pour génerer PDF de la réservation
 faire v_formulaire.php
-    numVol, infoclient, place réservé
+    faire fonction pour ajout dans BDD
     entrer info dans BDD
     trigger ? enlever dans nb place dispo
 faire le css du formulaire    
