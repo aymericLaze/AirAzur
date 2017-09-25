@@ -1,10 +1,10 @@
 <?php
-    
+    include "connectPDO.php";
     //recuperation de la liste des vols
     function getLesVols()
     {
         //appel au fichier permettant la connection a la bd
-        include "connectPDO.php";
+        
         
         $connexion = connect();
         
@@ -17,6 +17,18 @@
             
         }
         catch(PDOException $e){
+            return "Erreur dans la requête ".$e->getMessage();
+        }
+   }
+   function ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot){
+       $connexion=connect();
+       try{
+           //requete pour ajouter les réservations dans la BDD
+           $sql = "insert into reservation(idVols,nom,prenom,adresse,cp,ville,tel,nbPlaceReservee,prixTotal)"
+               . "values($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot";
+           $connexion->query($sql);
+       }
+       catch(PDOException $e){
             return "Erreur dans la requête ".$e->getMessage();
         }
    }
