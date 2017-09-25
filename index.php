@@ -40,6 +40,10 @@ and open the template in the editor.
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
                 break;
+            case "ajoutRes":
+                //ajoute la reservation dans la BDD
+                //faire la fonction/requete
+                break;
         }
         ?>
     </body>
