@@ -16,6 +16,8 @@
         if($connexion)
         {  
             //requete sql :
-            //Select * From vols where place <> 0
+            //select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
+            //from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
+            //where place>0
         }
    }
