@@ -9,7 +9,6 @@ faire v_formulaire.php
 faire le css du formulaire    
 Booster la sécurité
 Tester connexion globale dans fonctions.php
-Modifier BDD sans stocker les clients
 faire page après formulaire qui récupère les infos et demande une validation
     la réservation en affichant le prix total (faire le test si il y a assez
     de place à ce niveau la)
