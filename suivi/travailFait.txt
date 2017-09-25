@@ -1,0 +1,3 @@
+25/09/17
+    Premier jet de l'affichage de la réservation
+    correction des bug de conncetion a la bdd
