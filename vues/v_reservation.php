@@ -7,5 +7,5 @@
  */
 ?>
 <div id="reservation">
-    
+    Affiche les réservation déjà entré dans la BDD
 </div>
