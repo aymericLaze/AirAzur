@@ -1,5 +1,10 @@
 25/09/17
-    AL : Premier jet de l'affichage de la réservation
-    AL : correction des bug de conncetion a la bdd
-    AL : choix du vol dans catalogue envoie vers v_formulaire.php
+    AL :    Premier jet de l'affichage de la réservation
+    AL :    correction des bug de conncetion a la bdd
+    AL :    choix du vol dans catalogue envoie vers v_formulaire.php
 
+26/09/17
+    AL :    Modification pour rendre v_catalogue.php plus "propre" et conforme au MVC
+            Récuperation des donnees dans fonctions.php
+    AL :    commentaire sur fonctions.php et v_catalogue.php 
+            
