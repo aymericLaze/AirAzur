@@ -53,14 +53,39 @@
     
    //fonction de reservation dans la bdd
    function ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot){
+       //connexion a la bdd
        $connexion=connect();
        try{
            //requete pour ajouter les réservations dans la BDD
            $sql = "insert into reservation(idVols,nom,prenom,adresse,cp,ville,tel,nbPlaceReservee,prixTotal)"
                . "values($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot)";
            $connexion->query($sql);
-       }
+        }
        catch(PDOException $e){
             return "Erreur dans la requête ".$e->getMessage();
+        }
+    }
+   
+   
+   
+   //fonction pour calculer le prix total des places
+   function prixTotal($idVols,$nbrPlace)
+   {
+       //connexion a la bdd
+       $connexion=connect();
+       
+       try{
+            //requete pour recuperer le prix du vol
+            $sql =   "Select prix"
+                   ."From vols"
+                   ."Where idVols =".$idVols;
+            $res = $connexion->query($sql);
+            $prix = $res->fetch(PDO::FETCH_OBJ);
+        
+            return $nbrPlace * $prix->prix;
+        }
+        catch (PDOException $e)
+        {
+            return "Erreur dans la requete : ".$e->getMessage();
         }
    }

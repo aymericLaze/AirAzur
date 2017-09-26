@@ -6,5 +6,7 @@
 26/09/17
     AL :    Modification pour rendre v_catalogue.php plus "propre" et conforme au MVC
             Récuperation des donnees dans fonctions.php
-    AL :    commentaire sur fonctions.php et v_catalogue.php 
-            
+    AL :    Commentaire sur fonctions.php et v_catalogue.php
+    AL :    Réglage du bug d'encodage
+    AL :    Test connectPDO() en globale
+    AL :    Création de la fonction prixTotal()

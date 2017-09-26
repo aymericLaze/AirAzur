@@ -8,17 +8,17 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="./css/cssGeneral.css" />
-        <title></title>
+        <title>Intranet Air Azur</title>
     </head>
+    
     <body>
         <?php
-        include 'modele/sql/fonctions.php';
-        // put your code here
         if(!isset($_REQUEST['action'])){
             $action='accueil';
         }
         else {
             $action=$_REQUEST['action'];
+            include 'modele/sql/fonctions.php';
         }
         //affiche le header
         include './vues/v_header.php';
