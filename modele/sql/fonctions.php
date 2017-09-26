@@ -1,25 +1,49 @@
 <?php
+    //connexion a la bdd
     include "connectPDO.php";
     //recuperation de la liste des vols
     function getLesVols()
     {
-        //appel au fichier permettant la connection a la bd
-        
-        
+        //creation d'un objet PDO
         $connexion = connect();
+
         
         try{
+            //creation d'un tableau
+            $lesVols = array();
+            
             //requete sql pour recuperer les vols disponible pour la reservation
             $sql =  "select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
                     from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
                     where place>0";
-            return $resultat = $connexion->query($sql);
             
+            //execution de la requete
+            $resultatVol = $connexion->query($sql);
+            //return $resultat = $connexion->query($sql);
+            
+            //parcours des resultats et stockage dans tableau
+            while($vol = $resultatVol->fetch(PDO::FETCH_OBJ))
+            {
+                //$lesVols = $vol->idVols;
+                array_push($lesVols,array("1"=>array(
+                                "idVol"=>$vol->idVols,
+                                "aeroportDepart"=>$vol->aeroportDepart,
+                                "aeroportArrivee"=>$vol->aeroportArrivee,
+                                "dateDepart"=>$vol->dateDepart,
+                                "dateArrivee"=>$vol->dateArrivee,
+                                "prix"=>$vol->prix,
+                                "place"=>$vol->place
+                                )
+                            )
+                        );
+                
+            }
+            return $lesVols;
         }
         catch(PDOException $e){
             return "Erreur dans la requête ".$e->getMessage();
         }
-   }
+    }
    function ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot){
        $connexion=connect();
        try{

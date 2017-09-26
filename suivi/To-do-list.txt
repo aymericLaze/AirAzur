@@ -1,6 +1,6 @@
 afficher les vols
-    envoi sur formulaire reservation
-    session
+    envoi sur formulaire reservation avec une session
+    modifier le return, return un tableau et check si flag present pour afficher erreur ou non
 afficher les reservations
     bouton pour génerer PDF de la réservation
 faire v_formulaire.php
