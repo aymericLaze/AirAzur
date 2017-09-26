@@ -45,7 +45,7 @@
             return $lesVols;
         }
         catch(PDOException $e){
-            return "Erreur dans la requête ".$e->getMessage();
+            return "Erreur dans la requÃªte ".$e->getMessage();
         }
     }
     
@@ -55,12 +55,12 @@
    function ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot){
        $connexion=connect();
        try{
-           //requete pour ajouter les réservations dans la BDD
+           //requete pour ajouter les rÃ©servations dans la BDD
            $sql = "insert into reservation(idVols,nom,prenom,adresse,cp,ville,tel,nbPlaceReservee,prixTotal)"
                . "values($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot)";
            $connexion->query($sql);
        }
        catch(PDOException $e){
-            return "Erreur dans la requête ".$e->getMessage();
+            return "Erreur dans la requÃªte ".$e->getMessage();
         }
    }

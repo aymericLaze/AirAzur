@@ -1,13 +1,13 @@
 afficher les vols
     verifier si tableau ou str pour gerer affichage erreur
 afficher les reservations
-    bouton pour génerer PDF de la réservation
+    bouton pour gÃ©nerer PDF de la rÃ©servation
 faire v_formulaire.php
     faire fonction pour ajout dans BDD
     entrer info dans BDD
     trigger ? enlever dans nb place dispo
 faire le css du formulaire    
-Booster la sécurité
+Booster la sÃ©curitÃ©
 Tester connexion globale dans fonctions.php
 faire test au niveau de la validation pour voir si assez de place
 Faire fonction prixTotal($idVols,$places)

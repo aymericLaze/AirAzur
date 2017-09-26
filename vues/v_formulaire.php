@@ -1,14 +1,14 @@
 <?php
 ?>
 <form action="./index.php?action=validationReservation&idVols=<?php echo $idVols ?>" method="POST">
-    <!-- a faire récuperer -->
+    <!-- a faire rÃ©cuperer -->
     Nom :<input type="text" name="Nom" value="" /><br/>
-    Prénom :<input type="text" name="Prenom" value="" /><br/>
+    PrÃ©nom :<input type="text" name="Prenom" value="" /><br/>
     Adresse :<input type="text" name="Adresse" value="" /><br/>
     Code Postal :<input type="text" name="CP" value="" /><br/>
     Ville :<input type="text" name="Ville" value="" /><br/>
-    Téléphone :<input type="text" name="NumTel" value="" /><br/>
-    Nombre de place à reserver :<input type="text" name="Place" value="" /></label><br/>
+    TÃ©lÃ©phone :<input type="text" name="NumTel" value="" /><br/>
+    Nombre de place Ã  reserver :<input type="text" name="Place" value="" /></label><br/>
     <input type="submit" value="Reserver" name="envoyer" />
     <input type="reset" value="Effacer" name="reset" />
 </form>

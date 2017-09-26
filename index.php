@@ -38,14 +38,14 @@ and open the template in the editor.
                 break;
             case "formulaire":
                 $idVols=$_REQUEST["vol"];
-                //affiche la vue du formulaire de rÈservation
+                //affiche la vue du formulaire de r√©servation
                 include './vues/v_formulaire.php';
                 break;
             case "validationReservation":
-                //affiche la vue rÈcapitulative de la reservation
+                //affiche la vue r√©capitulative de la reservation
                 //faire test possible ou pas de reserver vol
-                //rÈcuperer prix total
-                //if test(nombre de place valablre) is true -> faire ajout rÈservation
+                //r√©cuperer prix total
+                //if test(nombre de place valablre) is true -> faire ajout r√©servation
                 //else renvoyer sur formulaire
                 $idVols=$_REQUEST["idVols"];
                 $nom=$_REQUEST["Nom"];

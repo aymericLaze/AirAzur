@@ -3,7 +3,7 @@
     <!-- Catalogue des vols disponible -->
     <table>
         <!-- Entete du tableau -->
-        <tr><th>Numéro de vol</th><th>Aéroport de départ</th><th>Aéroport d'arrivée</th><th>Date de départ</th><th>Date d'arrivée</th><th>Prix</th><th>Nombre de places Restantes</th><th>Réserver pour ce vol</th></tr>
+        <tr><th>NumÃ©ro de vol</th><th>AÃ©roport de dÃ©part</th><th>AÃ©roport d'arrivÃ©e</th><th>Date de dÃ©part</th><th>Date d'arrivÃ©e</th><th>Prix</th><th>Nombre de places Restantes</th><th>RÃ©server pour ce vol</th></tr>
         
         <!-- Affichage du tableau -->
         <?php
@@ -21,7 +21,7 @@
             <td><?php echo $vol["dateArrivee"] ?></td>
             <td><?php echo $vol["prix"]." ?" ?></td>
             <td><?php echo $vol["place"] ?></td>
-            <td><a href='index.php?action=formulaire&vol=<?php echo $vol["idVol"] ?>'>Réserver</a> </td>
+            <td><a href='index.php?action=formulaire&vol=<?php echo $vol["idVol"] ?>'>RÃ©server</a> </td>
         </tr>
         
         <?php
