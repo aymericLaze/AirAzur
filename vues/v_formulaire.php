@@ -1,6 +1,6 @@
 <?php
 ?>
-<form action="./index.php?action=ajoutReservation&idVols=<?php echo $idVols ?>" method="POST">
+<form action="./index.php?action=validationReservation&idVols=<?php echo $idVols ?>" method="POST">
     <!-- a faire récuperer -->
     Nom :<input type="text" name="Nom" value="" /><br/>
     Prénom :<input type="text" name="Prenom" value="" /><br/>

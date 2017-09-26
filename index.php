@@ -59,6 +59,7 @@ and open the template in the editor.
                 include './vues/v_validationReservation.php';
                 break;
             case "ajoutReservation":
+                $idVols=$_REQUEST["idVols"];
                 $nom=$_REQUEST["Nom"];
                 $prenom=$_REQUEST["Prenom"];
                 $adresse=$_REQUEST["Adresse"];
@@ -66,6 +67,7 @@ and open the template in the editor.
                 $ville=$_REQUEST["Ville"];
                 $tel=$_REQUEST["NumTel"];
                 $placeRes=$_REQUEST["Place"];
+                $idVols=$_REQUEST["PrixTotal"];
                 //ATTENTION A FAIRE : RECUP IDVOLS + PRIXTOTAL
                 ajoutRes($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot);
                 //ajoute la reservation dans la BDD
