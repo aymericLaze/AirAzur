@@ -47,7 +47,7 @@
                             "dateDepart"=>$vol->dateDepart,
                             "dateArrivee"=>$vol->dateArrivee,
                             "prix"=>$vol->prix,
-                            "place"=>$vol->place
+                            "placeDisponible"=>$vol->place
                             );
                 //ecriture d'un vol dans le tableau a renvoyer
                 $lesVols[$i] = $unVol;
@@ -95,7 +95,7 @@
    
    
    
-   //fonction pour mettre les champs d'un vol variable de session
+   //fonction pour mettre des champs en variable de session
    //parametre : tableau
    function setVariableSession($champsVol){
        foreach($champsVol as $indice=>$vol)
@@ -104,8 +104,11 @@
                 $_SESSION[$indice] = $vol;
             }
    }
+   
+   
+   //fonction de recuperation de la liste des reservations
    function getReservations()
-    {
+   {
         
         //creation d'un objet PDO
         $connexion = connect();
