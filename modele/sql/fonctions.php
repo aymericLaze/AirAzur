@@ -172,7 +172,7 @@
             $sql =  "update vols "
                     . "set place = place - ".$_SESSION['placePrise']
                     . " where idVols = '".$_SESSION['idVol']."'";
-            echo $sql;
+            
             
             //execution de la requete
             $connexion->query($sql);
