@@ -3,11 +3,7 @@
     modifier affichage de la date
 * afficher les reservations
     bouton pour génerer PDF de la réservation
-* faire v_formulaire.php
-    trigger ? enlever dans nb place dispo
 * faire le css du formulaire    
 * Booster la sécurité
 * Rajouter le mail (formulaire ++BDD)
-* Ajouter des boutons retour et accueil un peu partout
 * mettre tout les includes a jour : "(__DIRNAME__)"
-* changer les liens en bouton
