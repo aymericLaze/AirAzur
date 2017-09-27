@@ -36,7 +36,9 @@
                 include './vues/v_reservation.php';
                 break;
             case "formulaire":
+                //recuperation idVol
                 $idVols=$_REQUEST["vol"];
+                //creer variable de session avec info du vol
                 setVariableSession(getVols($idVols));
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
@@ -47,15 +49,13 @@
                 //récuperer prix total
                 //if test(nombre de place valablre) is true -> faire ajout réservation
                 //else renvoyer sur formulaire
-                $idVols=$_REQUEST["idVols"];
-                $nom=$_REQUEST["Nom"];
-                $prenom=$_REQUEST["Prenom"];
-                $adresse=$_REQUEST["Adresse"];
-                $cp=$_REQUEST["CP"];
-                $ville=$_REQUEST["Ville"];
-                $tel=$_REQUEST["NumTel"];
-                $placeRes=$_REQUEST["Place"];
-                $prixTotal=prixTotal($idVols,$placeRes);
+                
+                //creation variable de session avec les variables post du formulaire
+                setVariableSession($_POST);
+                //calcul du prix total
+                $_SESSION["prixTotal"] = prixTotal($_SESSION["prix"], $_SESSION["Place"]);
+                print_r($_SESSION);
+                //affiche la vue de la validation
                 include './vues/v_validationReservation.php';
                 break;
             case "ajoutReservation":
@@ -69,7 +69,7 @@
                 $placeRes=$_REQUEST["Place"];
                 $idVols=$_REQUEST["PrixTotal"];
                 //ATTENTION A FAIRE : RECUP IDVOLS + PRIXTOTAL
-                ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot);
+                ajoutReservation($_SESSION[""],$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot);
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
                 

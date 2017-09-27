@@ -13,3 +13,4 @@
 27/09/17
     AL :    Mise à jour getVols()
     AL :    Ajout fonction setSession();
+    AL :    Remplacement des variable post par des variables de session
