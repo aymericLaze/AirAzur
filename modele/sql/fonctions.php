@@ -153,3 +153,28 @@
             return "Erreur dans la requête ".$e->getMessage();
         }
     }
+    
+    
+    
+    //fonction pour decremeter le nombre de place disponible dans un vol apres reservation
+    function decrementerVol()
+    {
+        
+        //creation d'un objet PDO
+        $connexion = connect();
+        
+        try
+        {
+            //requete sql pour decrementer le nombre de place disponible
+            $sql =  "update vols"
+                    . "set place = place - ".$_SESSION['placePrise']
+                    . "where idVols = ".$_SESSION['idVol'];
+            
+            //execution de la requete
+            $connexion->query($sql);
+        }
+        catch (PDOException $e)
+        {
+            echo "Erreur dans la requête sql : ".$e->getMessage();
+        }
+    }

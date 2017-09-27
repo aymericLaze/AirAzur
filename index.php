@@ -56,6 +56,7 @@
             case "ajoutReservation":
                 //ajoute la reservation a la base de donnée
                 ajoutReservation($_SESSION["idVol"],$_SESSION["nom"],$_SESSION["prenom"],$_SESSION["adresse"],$_SESSION["CP"],$_SESSION["ville"],$_SESSION["numTel"],$_SESSION["placePrise"],$_SESSION["prixTotal"]);
+                decrementerVol();
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
                 
