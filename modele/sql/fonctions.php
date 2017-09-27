@@ -76,9 +76,9 @@
        
        try{
             //requete pour recuperer le prix du vol
-            $sql =   "Select prix"
-                   ."From vols"
-                   ."Where idVols =".$idVols;
+            $sql =   "Select prix "
+                   ."From vols "
+                   ."Where idVols ='".$idVols."'";
             $res = $connexion->query($sql);
             $prix = $res->fetch(PDO::FETCH_OBJ);
         
