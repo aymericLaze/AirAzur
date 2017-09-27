@@ -32,6 +32,7 @@
                 break;
             case "reservation":
                 //affiche la vue reservation
+                $reservations=getReservations();
                 include './vues/v_reservation.php';
                 break;
             case "formulaire":

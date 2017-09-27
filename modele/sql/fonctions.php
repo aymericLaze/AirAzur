@@ -93,3 +93,48 @@
             $_SESSION["place"] = $vol["place"];
             }
    }
+   function getReservations()
+    {
+        
+        //creation d'un objet PDO
+        $connexion = connect();
+        
+        try{
+           
+            //requete sql pour recuperer les reservations
+            $sql =  "select idReservation, idVols, nomClient, prenomClient, adresseClient, codePostalClient,villeClient,telClient,prixTotal,nbPlaceReservee "
+                    . "from reservation";
+             //creation d'un tableau
+            $lesRes = array();
+            //index
+            $i=0;
+          
+            //execution de la requete
+            $resultatRes = $connexion->query($sql);
+            //return $resultat = $connexion->query($sql);
+            
+            //parcours des resultats et stockage dans tableau
+            while($res = $resultatRes->fetch(PDO::FETCH_OBJ))
+            {
+                $unRes = array(
+                            "idReservation"=>$res->idReservation,
+                            "idVols"=>$res->idVols,
+                            "nomClient"=>$res->nomClient,
+                            "prenomClient"=>$res->prenomClient,
+                            "adresseClient"=>$res->adresseClient,
+                            "codePostalClient"=>$res->codePostalClient,
+                            "villeClient"=>$res->villeClient,
+                            "telClient"=>$res->telClient,
+                            "prixTotal"=>$res->prixTotal,
+                            "nbPlaceReservee"=>$res->nbPlaceReservee
+                            );
+                //ecriture d'un vol dans le tableau a renvoyer
+                $lesRes[$i] = $unRes;
+                $i++;
+            }
+            return $lesRes;
+        }
+        catch(PDOException $e){
+            return "Erreur dans la requête ".$e->getMessage();
+        }
+    }

@@ -4,9 +4,7 @@
 * afficher les reservations
     bouton pour génerer PDF de la réservation
 * faire v_formulaire.php
-    faire fonction pour ajout dans BDD
     stocker variable dans session
-    entrer info dans BDD
     trigger ? enlever dans nb place dispo
 * faire le css du formulaire    
 * Booster la sécurité
