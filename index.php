@@ -66,6 +66,8 @@
                 
                 break;
         }
+        //affiche le footer
+            include './vues/v_footer.php';
         ?>
     </body>
 </html>
