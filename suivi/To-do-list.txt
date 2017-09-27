@@ -11,3 +11,4 @@
 * Rajouter le mail (formulaire ++BDD)
 * Ajouter des boutons retour et accueil un peu partout
 * mettre tout les includes a jour : "(__DIRNAME__)"
+* changer les liens en bouton
