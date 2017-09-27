@@ -12,5 +12,6 @@
     AL :    Création de la fonction prixTotal()
 27/09/17
     AL :    Mise à jour getVols()
-    AL :    Ajout fonction setSession();
+    AL :    Ajout fonction setVariableSession();
     AL :    Remplacement des variable post par des variables de session
+    AL :    modif formulaire.php placePrise devient un select 

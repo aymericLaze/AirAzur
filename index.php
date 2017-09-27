@@ -44,17 +44,12 @@
                 include './vues/v_formulaire.php';
                 break;
             case "validationReservation":
-                //affiche la vue récapitulative de la reservation
-                //faire test possible ou pas de reserver vol
-                //récuperer prix total
-                //if test(nombre de place valablre) is true -> faire ajout réservation
-                //else renvoyer sur formulaire
-                
+                                
                 //creation variable de session avec les variables post du formulaire
                 setVariableSession($_POST);
                 //calcul du prix total
                 $_SESSION["prixTotal"] = prixTotal($_SESSION["prix"], $_SESSION["placePrise"]);
-                print_r($_SESSION);
+                
                 //affiche la vue de la validation
                 include './vues/v_validationReservation.php';
                 break;

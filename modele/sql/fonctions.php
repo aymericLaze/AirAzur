@@ -106,6 +106,7 @@
    }
    
    
+   
    //fonction de recuperation de la liste des reservations
    function getReservations()
    {

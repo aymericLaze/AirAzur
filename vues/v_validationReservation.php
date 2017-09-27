@@ -14,4 +14,3 @@
     Prix : <?php echo $_SESSION["prixTotal"] ?>€<br/>
     <a href="./index.php?action=ajoutReservation">Valider</a>
 </fieldset>
-

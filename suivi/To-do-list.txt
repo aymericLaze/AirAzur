@@ -7,7 +7,6 @@
     trigger ? enlever dans nb place dispo
 * faire le css du formulaire    
 * Booster la sécurité
-* faire test au niveau de la validation pour voir si assez de place
 * Rajouter le mail (formulaire ++BDD)
 * Ajouter des boutons retour et accueil un peu partout
 * mettre tout les includes a jour : "(__DIRNAME__)"
