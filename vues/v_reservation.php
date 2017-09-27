@@ -25,8 +25,8 @@
             <td><?php echo $res["nomClient"]." ".$res["prenomClient"] ?></td>
             <td><?php echo $res["adresseClient"]." ".$res["codePostalClient"]." ".$res["villeClient"] ?></td>
             <td><?php echo $res["telClient"] ?></td>
-            <td><?php echo $res["nbPlaceReservee"]." €" ?></td>
-            <td><?php echo $res["prixTotal"] ?></td>
+            <td><?php echo $res["nbPlaceReservee"] ?></td>
+            <td><?php echo $res["prixTotal"]." €" ?></td>
             <td>GénererPDF</td>
         </tr>
         

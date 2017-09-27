@@ -2,14 +2,7 @@
     session_start();
 ?>
 
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="./css/cssGeneral.css" />
-        <title>Intranet Air Azur</title>
-    </head>
-    
-    <body>
+
         <?php
         if(!isset($_REQUEST['action'])){
             $action='accueil';
@@ -61,9 +54,9 @@
                 echo "Votre vol a été reservé";
                 
                 break;
-        }
+        } 
+        
         //affiche le footer
             include './vues/v_footer.php';
-        ?>
-    </body>
-</html>
+       ?>
+ 

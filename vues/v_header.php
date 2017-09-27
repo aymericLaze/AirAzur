@@ -1,15 +1,17 @@
-<?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-?>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/cssGeneral.css" />
+        <title>Intranet Air Azur</title>
+    </head>
+    
+    <body style="background-color: lightblue; text-align: center;">
+<div id="center">
 <div>
     <img src="./images/avion.jpg">
 </div>
-<div id='menu'>
+<div id='menu' style="margin-left: 350px;">
     <ul>
         <li><a href='./index.php?action=accueil'>Accueil</a></li>
         <li><a href='./index.php?action=catalogue'>Catalogue</a></li>

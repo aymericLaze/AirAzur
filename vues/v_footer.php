@@ -18,3 +18,6 @@ if($action != "accueil"){
 <?php
 }
 ?>
+</div>
+</body>
+</html>
