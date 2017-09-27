@@ -64,13 +64,14 @@
                 $adresse=$_REQUEST["Adresse"];
                 $cp=$_REQUEST["CP"];
                 $ville=$_REQUEST["Ville"];
-                $tel=$_REQUEST["NumTel"];
+                $tel=$_REQUEST["Tel"];
                 $placeRes=$_REQUEST["Place"];
                 $idVols=$_REQUEST["PrixTotal"];
                 //ATTENTION A FAIRE : RECUP IDVOLS + PRIXTOTAL
-                ajoutRes($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot);
+                ajoutReservation($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot);
                 //ajoute la reservation dans la BDD
-                //faire la fonction/requete
+                echo "Votre vol a été reservé";
+                
                 break;
         }
         ?>

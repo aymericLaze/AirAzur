@@ -11,7 +11,5 @@
 * faire le css du formulaire    
 * Booster la sécurité
 * faire test au niveau de la validation pour voir si assez de place
-* Faire fonction prixTotal($idVols,$places)
-        //$sql=select prix from vols where idVols=$idVols ;
-           return $places*$sql;
+*Rajouter le mail (formulaire ++BDD)
 * Ajouter des boutons retour et accueil un peu partout

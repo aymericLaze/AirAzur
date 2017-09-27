@@ -65,8 +65,8 @@
        $connexion=connect();
        try{
            //requete pour ajouter les réservations dans la BDD
-           $sql = "insert into reservation(idVols,nom,prenom,adresse,cp,ville,tel,nbPlaceReservee,prixTotal)"
-               . "values($idVols,$nom,$prenom,$adresse,$cp,$ville,$tel,$placeRes,$prixTot)";
+           $sql = "insert into reservation(idVols,nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal)"
+               . "values('.$idVols','$nom','$prenom','$adresse',$cp,'$ville','$tel',$placeRes,$prixTot)";
            $connexion->query($sql);
         }
        catch(PDOException $e){
