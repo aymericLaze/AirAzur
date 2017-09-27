@@ -2,7 +2,7 @@
     //fonction de connexion a la base de donnee
     function connect()
     {
-        include 'configPDO.php';
+        include_once  'configPDO.php';
         
         try
         {

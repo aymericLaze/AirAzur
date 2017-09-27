@@ -79,10 +79,13 @@
            $sql = "insert into reservation(idVols,nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal)"
                . "values('$idVols','$nom','$prenom','$adresse',$cp,'$ville','$tel',$placeRes,$prixTot)";
            $connexion->query($sql);
+           
         }
+        
        catch(PDOException $e){
             return "Erreur dans la requête ".$e->getMessage();
         }
+        
     }
    
    
@@ -166,9 +169,10 @@
         try
         {
             //requete sql pour decrementer le nombre de place disponible
-            $sql =  "update vols"
+            $sql =  "update vols "
                     . "set place = place - ".$_SESSION['placePrise']
-                    . "where idVols = ".$_SESSION['idVol'];
+                    . " where idVols = '".$_SESSION['idVol']."'";
+            echo $sql;
             
             //execution de la requete
             $connexion->query($sql);
