@@ -13,6 +13,9 @@
         //creation d'un objet PDO
         $connexion = connect();
         
+        //parametre non vide
+        $estNonVide = isset($unVol);
+        
         try{
             //creation d'un tableau
             $lesVols = array();
@@ -25,7 +28,7 @@
                     where place>0";
             
             //recupere juste les champs du vol passe en parametre
-            if(isset($unVol))
+            if($estNonVide)
             {
                 $sql = $sql . " and idVols="."'".$unVol."'";
             }
@@ -50,7 +53,15 @@
                 $lesVols[$i] = $unVol;
                 $i++;
             }
-            return $lesVols;
+            
+            if($estNonVide)
+            {
+                return $lesVols[0];
+            }
+            else
+            {
+                return $lesVols;
+            }
         }
         catch(PDOException $e){
             return "Erreur dans la requête ".$e->getMessage();
@@ -85,12 +96,12 @@
    
    
    //fonction pour mettre les champs d'un vol variable de session
+   //parametre : tableau
    function setVariableSession($champsVol){
        foreach($champsVol as $indice=>$vol)
             {
-            $_SESSION["idVol"] = $vol["idVol"];
-            $_SESSION["prix"] = $vol["prix"];
-            $_SESSION["place"] = $vol["place"];
+                //ajoute variable session
+                $_SESSION[$indice] = $vol;
             }
    }
    function getReservations()

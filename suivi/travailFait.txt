@@ -10,3 +10,6 @@
     AL :    Réglage du bug d'encodage
     AL :    Test connectPDO() en globale
     AL :    Création de la fonction prixTotal()
+27/09/17
+    AL :    Mise à jour getVols()
+    AL :    Ajout fonction setSession();
