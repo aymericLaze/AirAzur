@@ -79,23 +79,7 @@
    //fonction pour calculer le prix total des places
    function prixTotal($idVols,$nbrPlace)
    {
-       //connexion a la bdd
-       $connexion=connect();
-       
-       try{
-            //requete pour recuperer le prix du vol
-            $sql =   "Select prix "
-                   ."From vols "
-                   ."Where idVols ='".$idVols."'";
-            $res = $connexion->query($sql);
-            $prix = $res->fetch(PDO::FETCH_OBJ);
-        
-            return $nbrPlace * $prix->prix;
-        }
-        catch (PDOException $e)
-        {
-            return "Erreur dans la requete : ".$e->getMessage();
-        }
+        return $nbrPlace * $_SESSION["prix"];
    }
    
    
