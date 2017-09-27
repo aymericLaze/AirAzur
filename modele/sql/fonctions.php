@@ -6,8 +6,10 @@
    
     
     //fonction de recuperation de la liste des vols
-    function getLesVols()
+    //variable par defaut pour changer la requete sql
+    function getVols($unVol = NULL)
     {
+        
         //creation d'un objet PDO
         $connexion = connect();
         
@@ -21,6 +23,12 @@
             $sql =  "select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
                     from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
                     where place>0";
+            
+            //recupere juste les champs du vol passe en parametre
+            if(isset($unVol))
+            {
+                $sql = $sql . " and idVols="."'".$unVol."'";
+            }
             
             //execution de la requete
             $resultatVol = $connexion->query($sql);
@@ -88,4 +96,16 @@
         {
             return "Erreur dans la requete : ".$e->getMessage();
         }
+   }
+   
+   
+   
+   //fonction pour mettre les champs d'un vol variable de session
+   function setVariableSession($champsVol){
+       foreach($champsVol as $indice=>$vol)
+            {
+            $_SESSION["idVol"] = $vol["idVol"];
+            $_SESSION["prix"] = $vol["prix"];
+            $_SESSION["place"] = $vol["place"];
+            }
    }

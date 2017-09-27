@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+    session_start();
+?>
+
 <html>
     <head>
         <meta charset="UTF-8" />
@@ -29,7 +27,7 @@ and open the template in the editor.
                 break;
             case "catalogue":
                 //affiche la vue catalogue
-                $lesVols=getLesvols();
+                $lesVols=getvols();
                 include './vues/v_catalogue.php';
                 break;
             case "reservation":
@@ -38,6 +36,7 @@ and open the template in the editor.
                 break;
             case "formulaire":
                 $idVols=$_REQUEST["vol"];
+                setVariableSession(getVols($idVols));
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
                 break;
