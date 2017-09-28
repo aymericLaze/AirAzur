@@ -1,11 +1,22 @@
 
 <div id="catalogue">
     <!-- Catalogue des vols disponible -->
+    
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+    
     <table>
         <!-- Entete du tableau -->
-        <tr><th>Numéro de vol</th><th>Aéroport de départ</th><th>Aéroport d'arrivée</th><th>Date de départ</th><th>Date d'arrivée</th><th>Prix</th><th>Nombre de places Restantes</th><th>Réserver pour ce vol</th></tr>
+        <thead>
+            <tr><th>Numéro de vol</th><th>Aéroport de départ</th><th>Aéroport d'arrivée</th><th>Date de départ</th><th>Date d'arrivée</th><th>  Prix  </th><th>Nombre de places Restantes</th><th>Réserver pour ce vol</th></tr>
+        </thead>
         
         <!-- Affichage du tableau -->
+        <tbody>
         <?php
             //Parcours du tableau, contenant les vols, recupere
             foreach($lesVols as $indice=>$vol)
@@ -27,7 +38,7 @@
         <?php
             }
         ?>
-        
+        </tbody>
     </table>
 </div>
 

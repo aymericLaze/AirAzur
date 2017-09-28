@@ -36,7 +36,7 @@
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
                 break;
-            case "validationReservation":
+            case "validation-reservation":
                                 
                 //creation variable de session avec les variables post du formulaire
                 setVariableSession($_POST);
@@ -44,15 +44,15 @@
                 $_SESSION["prixTotal"] = prixTotal($_SESSION["prix"], $_SESSION["placePrise"]);
                 
                 //affiche la vue de la validation
-                include './vues/v_validationReservation.php';
+                include './vues/v_validation-reservation.php';
                 break;
-            case "ajoutReservation":
+            case "ajout-reservation":
                 //ajoute la reservation a la base de donnée
                 ajoutReservation($_SESSION["idVol"],$_SESSION["nom"],$_SESSION["prenom"],$_SESSION["adresse"],$_SESSION["CP"],$_SESSION["ville"],$_SESSION["numTel"],$_SESSION["placePrise"],$_SESSION["prixTotal"]);
                 //supprime le nombre de place
                 decrementerVol();
                 
-                include './vues/v_ajoutReservation.php';
+                include './vues/v_ajout-reservation.php';
                 break;
         } 
         
