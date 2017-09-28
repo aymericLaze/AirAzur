@@ -42,7 +42,6 @@
                 //creation variable de session avec les variables post du formulaire
                 initSession("reservation");
                 ajouterAuPanier("reservation", $_POST);
-                //setVariableSession($_POST);
                 //calcul du prix total et ajout dans session["reservation"]
                 $_SESSION["reservation"]["prixTotal"] = prixTotal($_SESSION["reservation"]["placePrise"]);
                 
@@ -55,7 +54,7 @@
                 decrementerVol();
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
-                //session_destroy();
+                session_destroy();
                 break;
         } 
         
