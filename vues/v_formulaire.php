@@ -12,7 +12,13 @@
     Nombre de place à reserver : <select name="placePrise">
                                         <?php
                                             $placeMax = $_SESSION["placeDisponible"];
-                                            for($i=1; $i <= $placeMax; $i++){
+                                            if ($placeMax>10){
+                                                $placeAffiche=10;
+                                            }
+                                            else {
+                                                $placeAffiche=$placeMax;
+                                            }
+                                            for($i=1; $i <= $placeAffiche; $i++){
                                         ?>
                                         <option value="<?php echo $i ?>"><?php echo $i ?></option>
                                         <?php } ?>
