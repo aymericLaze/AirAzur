@@ -12,5 +12,5 @@
     Téléphone : <?php echo $_SESSION["reservation"]["numTel"] ?><br/>
     Nombre de place réservé : <?php echo $_SESSION["reservation"]["placePrise"] ?><br/>
     Prix : <?php echo $_SESSION["reservation"]["prixTotal"] ?>€<br/>
-    <a href="./index.php?action=ajoutReservation">Valider</a>
+    <a href="./index.php?action=ajoutReservation"><button>Valider</button></a>
 </fieldset>
