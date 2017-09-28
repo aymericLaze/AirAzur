@@ -91,7 +91,7 @@
    
    
    //fonction pour calculer le prix total des places
-   function prixTotal($idVols,$nbrPlace)
+   function prixTotal($nbrPlace)
    {
         return $nbrPlace * $_SESSION["prix"];
    }
@@ -181,4 +181,22 @@
         {
             echo "Erreur dans la requête sql : ".$e->getMessage();
         }
+    }
+    
+    
+    
+    //fonction pour initialiser une session panier
+    function initSession($nom)
+    {
+        if(!isset($_SESSION[$nom]))
+        {
+            $_SESSION[$nom] = array();
+        }
+    }
+    
+    
+    
+    //fonction qui ajoute un tableau dans un panier
+    function ajouterAuPanier($nomSession, $tableauAjouter){
+        $_SESSION[$nomSession] = $tableauAjouter;
     }
