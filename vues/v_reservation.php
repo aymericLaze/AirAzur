@@ -27,7 +27,7 @@
             <td><?php echo $res["telClient"] ?></td>
             <td><?php echo $res["nbPlaceReservee"] ?></td>
             <td><?php echo $res["prixTotal"]." €" ?></td>
-            <td>GénererPDF</td>
+            <td><img src="./images/icon_pdf.png" style="width: 30px; height: 30px;padding-left: 0;"/></td>
         </tr>
         
         <?php
