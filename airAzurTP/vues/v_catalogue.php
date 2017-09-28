@@ -2,13 +2,6 @@
 <div id="catalogue">
     <!-- Catalogue des vols disponible -->
     
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            text-align: center;
-        }
-    </style>
-    
     <table>
         <!-- Entete du tableau -->
         <thead>

@@ -43,6 +43,11 @@ input[type="submit"]
 	width: 30%;
 }
 
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
 #accueil {
     padding-left:50px;
 }
