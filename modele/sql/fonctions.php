@@ -93,7 +93,7 @@
    //fonction pour calculer le prix total des places
    function prixTotal($nbrPlace)
    {
-        return $nbrPlace * $_SESSION["prix"];
+        return $nbrPlace * $_SESSION["vol"]["prix"];
    }
    
    
@@ -170,8 +170,8 @@
         {
             //requete sql pour decrementer le nombre de place disponible
             $sql =  "update vols "
-                    . "set place = place - ".$_SESSION['placePrise']
-                    . " where idVols = '".$_SESSION['idVol']."'";
+                    . "set place = place - ".$_SESSION["reservation"]['placePrise']
+                    . " where idVols = '".$_SESSION["vol"]['idVol']."'";
             
             
             //execution de la requete

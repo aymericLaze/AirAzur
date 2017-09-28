@@ -1,7 +1,7 @@
 <?php
 ?>
 
-<form action="./index.php?action=validationReservation&idVols=<?php echo $idVols ?>" method="POST">
+<form action="./index.php?action=validationReservation&idVols=<?php echo $_SESSION["vol"]["idVol"] ?>" method="POST">
     <!-- a faire récuperer -->
     Nom :<input type="text" name="nom" value="" /><br/>
     Prénom :<input type="text" name="prenom" value="" /><br/>
@@ -11,14 +11,9 @@
     Téléphone :<input type="text" name="numTel" value="" /><br/>
     Nombre de place à reserver : <select name="placePrise">
                                         <?php
-                                            $placeMax = $_SESSION["placeDisponible"];
-                                            if ($placeMax>10){
-                                                $placeAffiche=10;
-                                            }
-                                            else {
-                                                $placeAffiche=$placeMax;
-                                            }
-                                            for($i=1; $i <= $placeAffiche; $i++){
+                                            $placeMax = $_SESSION["vol"]["placeDisponible"];
+                                            
+                                            for($i=1; $i <= $placeMax; $i++){
                                         ?>
                                         <option value="<?php echo $i ?>"><?php echo $i ?></option>
                                         <?php } ?>

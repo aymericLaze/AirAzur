@@ -32,27 +32,30 @@
                 //recuperation idVol
                 $idVols=$_REQUEST["vol"];
                 //creer variable de session avec info du vol
-                setVariableSession(getVols($idVols));
+                initSession("vol");
+                ajouterAuPanier("vol", getVols($idVols));
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
                 break;
             case "validationReservation":
                                 
                 //creation variable de session avec les variables post du formulaire
-                setVariableSession($_POST);
-                //calcul du prix total
-                $_SESSION["prixTotal"] = prixTotal($_SESSION["prix"], $_SESSION["placePrise"]);
+                initSession("reservation");
+                ajouterAuPanier("reservation", $_POST);
+                //setVariableSession($_POST);
+                //calcul du prix total et ajout dans session["reservation"]
+                $_SESSION["reservation"]["prixTotal"] = prixTotal($_SESSION["reservation"]["placePrise"]);
                 
                 //affiche la vue de la validation
                 include './vues/v_validationReservation.php';
                 break;
             case "ajoutReservation":
                 //ajoute la reservation a la base de donnée
-                ajoutReservation($_SESSION["idVol"],$_SESSION["nom"],$_SESSION["prenom"],$_SESSION["adresse"],$_SESSION["CP"],$_SESSION["ville"],$_SESSION["numTel"],$_SESSION["placePrise"],$_SESSION["prixTotal"]);
+                ajoutReservation($_SESSION["vol"]["idVol"],$_SESSION["reservation"]["nom"],$_SESSION["reservation"]["prenom"],$_SESSION["reservation"]["adresse"],$_SESSION["reservation"]["CP"],$_SESSION["reservation"]["ville"],$_SESSION["reservation"]["numTel"],$_SESSION["reservation"]["placePrise"],$_SESSION["reservation"]["prixTotal"]);
                 decrementerVol();
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
-                
+                //session_destroy();
                 break;
         } 
         
