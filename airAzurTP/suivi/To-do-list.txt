@@ -1,9 +1,0 @@
-* afficher les vols
-    verifier si tableau ou str pour gerer affichage erreur ou afficher dans fonction et tester si existe (voir avec Eugene)
-    modifier affichage de la date
-* afficher les reservations
-    bouton pour génerer PDF de la réservation
-* faire le css du formulaire    
-* Booster la sécurité
-* Rajouter le mail (formulaire ++BDD)
-* mettre tout les includes a jour : "(__DIRNAME__)"
