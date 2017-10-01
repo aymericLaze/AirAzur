@@ -1,6 +1,7 @@
 * afficher les vols
     verifier si tableau ou str pour gerer affichage erreur ou afficher dans fonction et tester si existe (voir avec Eugene)
     modifier affichage de la date
+    utiliser fetchall
 * afficher les reservations
     bouton pour génerer PDF de la réservation
 * faire v_formulaire.php
@@ -11,4 +12,4 @@
 * Ajouter des boutons retour et accueil un peu partout
 * mettre tout les includes a jour : "(__DIRNAME__)"
 * ajouter v_ajoutReservation.php
-* css pour tableau
+* modifier ajoutReservation() retirer parametre, utiliser variable de session
