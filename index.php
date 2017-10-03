@@ -56,6 +56,7 @@
                 echo "Votre vol a été reservé";
                 session_destroy();
                 break;
+            
         } 
         
         //affiche le footer
