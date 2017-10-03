@@ -2,6 +2,6 @@
     //constante de connexion a la base de donnee
     define('HOST','localhost');
     define('DBNAME','airAzur');
-    define('USER','root');
-    define('MDP','');
+    define('USER','claze');
+    define('MDP','claze');
 ?>
