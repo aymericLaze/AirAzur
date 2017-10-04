@@ -56,6 +56,13 @@
                 echo "Votre vol a été reservé";
                 session_destroy();
                 break;
+            case "creationPDF":
+                //créer le pdf pour la reservation correspondante
+                
+                $reservations= getLaReservation($_REQUEST["id"]);
+                
+                include './modele/pdf.php';
+                
             
         } 
         

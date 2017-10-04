@@ -27,8 +27,9 @@
             <td><?php echo $res["telClient"] ?></td>
             <td><?php echo $res["nbPlaceReservee"] ?></td>
             <td><?php echo $res["prixTotal"]." €" ?></td>
-            <td><img src="./images/icon_pdf.png" style="width: 30px; height: 30px;padding-left: 0;"/></td>
+            <td><form action="./index.php?action=creationPDF&id=<?php echo $res["idReservation"]?>" method="POST"><input type="image" src="./images/icon_pdf.png" style="width: 30px; height: 30px;padding-left: 0;" onclick="submit"/></input></form></td>
         </tr>
+        
         
         <?php
             }
