@@ -9,8 +9,22 @@
     $pdf->SetFont('Arial', 'B', 16);
 //ajoute une image
     $pdf->Image('./images/avion.jpg',10,10, 64, 48);
-    $pdf->Ln(4);
+    $pdf->Cell(80);
+    // Titre
+    $pdf->Cell(0,10,'Air Azur',0,1,'C');
+    $pdf->Ln(20);
+    $pdf->Cell(80);
+    $pdf->Cell(0,10,'Récapitulatif de reservation',0,1,'C');
+    $pdf->Ln(20);
+    $pdf->Cell(0, 10, utf8_decode('Réservation n°'.$reservations["idReservation"]),0,1,'C');
+    $pdf->Ln(20);
+    $pdf->Cell(40,10,"Vol : ".$reservations["idVols"],0,0);
+    $pdf->Line($pdf->GetX(),$pdf->GetY()+5, $pdf->GetX()+160, $pdf->GetY()+5);
+    $pdf->Ln(10);
+    $pdf->Cell(0,10,"Nom : ".$reservations["nomClient"]." ".$reservations["prenomClient"],0,1);
+    
 // affiche du texte
+    /*
     $pdf->Cell(40, 10, 'Réservation n°'.$reservations["idReservation"]);
     $pdf->Ln();
     $pdf->Cell(40,10,"Vol : ".$reservations["idVols"]);
@@ -19,7 +33,7 @@
     $pdf->Cell(40,10,"Nom : ".$reservations["nomClient"]);
     $pdf->Ln();
     $pdf->Cell(40,10,"Prenom : ".$reservations["prenomClient"]);
-    
+    */
 // Enfin, le document est terminé et envoyé au navigateur grâce à Output().
     $pdf->Output();
     ob_end_flush();
