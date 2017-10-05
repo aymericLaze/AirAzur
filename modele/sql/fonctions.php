@@ -83,7 +83,7 @@ function ajoutReservation() {
         
         //securite
         $sql = "insert into reservation(nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal,idVols)"
-                . "values(:nom,:prenom,:adresse,:cp,:ville,:numTel,:placePrise,:prixTotal,:idVols)";
+                . "values(:nom,:prenom,:adresse,:CP,:ville,:numTel,:placePrise,:prixTotal,:idVols)";
         
         $preparation = $connexion->prepare($sql);
         $preparation->execute($_SESSION["reservation"]);
