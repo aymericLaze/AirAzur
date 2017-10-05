@@ -23,7 +23,7 @@
             
             case "catalogue":
                 //affiche la vue catalogue
-                $lesVols=getvols();
+                $lesVols= getLesVols();
                 include './vues/v_catalogue.php';
                 break;
             
@@ -35,10 +35,10 @@
             
             case "formulaire":
                 //recuperation idVol
-                $idVols=$_REQUEST["vol"];
+                $idVol=$_REQUEST["vol"];
                 //creer variable de session avec info du vol
                 initSession("vol");
-                ajouterAuPanier("vol", getVols($idVols));
+                ajouterAuPanier("vol", getLeVol($idVol));
                 //affiche la vue du formulaire de réservation
                 include './vues/v_formulaire.php';
                 break;
@@ -50,7 +50,7 @@
                 //calcul du prix total et ajout dans session["reservation"]
                 $_SESSION["reservation"]["prixTotal"] = prixTotal($_SESSION["reservation"]["placePrise"]);
                 //ajout de l'id du vol dans la reservation
-                $_SESSION["reservation"]["idVol"] = $_SESSION["vol"]["idVol"];
+                $_SESSION["reservation"]["idVol"] = $_SESSION["vol"]["idVols"];
                 unset($_SESSION["vol"]);
                 //affiche la vue de la validation
                 include './vues/v_validationReservation.php';

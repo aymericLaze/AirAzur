@@ -11,7 +11,7 @@
     Téléphone :<input type="text" name="numTel" value="" /><br/>
     Nombre de place à reserver : <select name="placePrise">
                                         <?php
-                                            $placeMax = $_SESSION["vol"]["placeDisponible"];
+                                            $placeMax = $_SESSION["vol"]["place"];
                                             
                                             for($i=1; $i <= $placeMax; $i++){
                                         ?>

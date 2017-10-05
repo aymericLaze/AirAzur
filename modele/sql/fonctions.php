@@ -4,8 +4,7 @@
 include "connectPDO.php";
 
 //fonction de recuperation de la liste des vols
-//variable par defaut pour changer la requete sql
-function getVols($unVol = NULL) {
+function getLesVols($unVol = NULL) {
 
     //creation d'un objet PDO
     $connexion = connect();
@@ -57,6 +56,30 @@ function getVols($unVol = NULL) {
         return "Erreur dans la requête " . $e->getMessage();
     }
 }
+
+//fonction de recuperation d'un vol
+function getLeVol($idVol){
+    
+    //creation d'un objet PDO
+    $connexion = connect();
+
+    try
+    {
+       $sql = "select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
+                    from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
+                    where idVols = '$idVol'";
+       
+       $resultat = $connexion->query($sql);
+       
+       return $resultat->fetch(PDO::FETCH_ASSOC);
+       
+    } 
+    catch (PDOException $e)
+    {
+        echo "Erreur dans la requête";
+    }
+}
+
 
 //fonction de reservation dans la bdd
 function ajoutReservation() {
