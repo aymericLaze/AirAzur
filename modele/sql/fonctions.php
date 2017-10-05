@@ -180,7 +180,7 @@ function decrementerVol() {
         //requete sql pour decrementer le nombre de place disponible
         $sql = "update vols "
                 . "set place = place - " . $_SESSION["reservation"]['placePrise']
-                . " where idVols = '" . $_SESSION["vol"]['idVol'] . "'";
+                . " where idVols = '" . $_SESSION["reservation"]['idVol'] . "'";
 
 
         //execution de la requete

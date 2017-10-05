@@ -4,7 +4,7 @@
 <br/>
 
 <fieldset>
-    <legend><?php echo $_SESSION["vol"]["idVol"] ?></legend>
+    <legend><?php echo $_SESSION["reservation"]["idVol"] ?></legend>
     <br/>
     Nom : <?php echo $_SESSION["reservation"]["nom"] ?><br />
     Prenom : <?php echo $_SESSION["reservation"]["prenom"] ?><br />
