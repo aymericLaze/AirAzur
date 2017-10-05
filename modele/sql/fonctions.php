@@ -4,13 +4,10 @@
 include "connectPDO.php";
 
 //fonction de recuperation de la liste des vols
-function getLesVols($unVol = NULL) {
+function getLesVols() {
 
     //creation d'un objet PDO
     $connexion = connect();
-
-    //parametre non vide
-    $estNonVide = isset($unVol);
 
     try {
         //creation d'un tableau
@@ -23,36 +20,19 @@ function getLesVols($unVol = NULL) {
                     from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
                     where place>0";
 
-        //recupere juste les champs du vol passe en parametre
-        if ($estNonVide) {
-            $sql = $sql . " and idVols=" . "'" . $unVol . "'";
-        }
-
         //execution de la requete
         $resultatVol = $connexion->query($sql);
-        //return $resultat = $connexion->query($sql);
-        //parcours des resultats et stockage dans tableau
-        while ($vol = $resultatVol->fetch(PDO::FETCH_OBJ)) {
-            $unVol = array(
-                "idVol" => $vol->idVols,
-                "aeroportDepart" => $vol->aeroportDepart,
-                "aeroportArrivee" => $vol->aeroportArrivee,
-                "dateDepart" => $vol->dateDepart,
-                "dateArrivee" => $vol->dateArrivee,
-                "prix" => $vol->prix,
-                "placeDisponible" => $vol->place
-            );
-            //ecriture d'un vol dans le tableau a renvoyer
+
+        //parcours des resultats et stockage dans tableau        
+        while ($unVol = $resultatVol->fetch(PDO::FETCH_ASSOC)) {
             $lesVols[$i] = $unVol;
             $i++;
         }
+        
+        return $lesVols;
 
-        if ($estNonVide) {
-            return $lesVols[0];
-        } else {
-            return $lesVols;
-        }
-    } catch (PDOException $e) {
+    }
+    catch (PDOException $e) {
         return "Erreur dans la requête " . $e->getMessage();
     }
 }

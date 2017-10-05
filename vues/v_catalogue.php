@@ -14,13 +14,13 @@
         
         <!-- Corps du tableau -->
         <tr>
-            <td><?php echo $vol["idVol"] ?></td>
+            <td><?php echo $vol["idVols"] ?></td>
             <td><?php echo $vol["aeroportDepart"] ?></td>
             <td><?php echo $vol["aeroportArrivee"] ?></td>
             <td><?php echo $vol["dateDepart"] ?></td>
             <td><?php echo $vol["dateArrivee"] ?></td>
             <td><?php echo $vol["prix"]." €" ?></td>
-            <td><?php echo $vol["placeDisponible"] ?></td>
+            <td><?php echo $vol["place"] ?></td>
             <td><a href='index.php?action=formulaire&vol=<?php echo $vol["idVol"] ?>'><button>Réserver</button></a> </td>
         </tr>
         
