@@ -74,6 +74,7 @@ function ajoutReservation() {
         //ajouter les réservations dans la BDD
         $preparation = $connexion->prepare($sql);
         $preparation->execute($_SESSION["reservation"]);
+        decrementerVol();
         
     } catch (PDOException $e) {
         return "Erreur dans la requête " . $e->getMessage();

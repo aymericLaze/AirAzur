@@ -59,7 +59,7 @@
             case "ajoutReservation":
                 //ajoute la reservation a la base de donnée
                 ajoutReservation();
-                decrementerVol();
+                
                 echo "Votre vol a été reservé";
                 session_destroy();
                 break;
@@ -68,8 +68,9 @@
                 //créer le pdf pour la reservation correspondante
                 
                 $reservations= getLaReservation($_REQUEST["id"]);
-                //include 'modele/fonctionPDF.php';
+                $vol= getLeVol($reservations["idVols"]);
                 include 'vues/pdfReservation.php';
+                creerPDF($reservations,$vol);
                 break;  
         } 
         
