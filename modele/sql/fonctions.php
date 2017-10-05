@@ -145,22 +145,7 @@ function getReservations() {
 function getLaReservation($id) {
     //création pdo
     $connexion = connect();
-    //A FINIR
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
     
     try {
         //requete sql pour récuperer la réservation

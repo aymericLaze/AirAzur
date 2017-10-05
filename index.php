@@ -12,7 +12,9 @@
             include 'modele/sql/fonctions.php';
         }
         //affiche le header
-        include './vues/v_header.php';
+        if ($action!='creationPDF'){
+            include './vues/v_header.php';
+        }
         switch($action){
             case "accueil":
                 //affiche la vue accueil
@@ -60,13 +62,17 @@
                 //créer le pdf pour la reservation correspondante
                 
                 $reservations= getLaReservation($_REQUEST["id"]);
+                include 'modele/fonctionPDF.php';
+                include 'vues/pdfReservation.php';
                 
-                include './modele/pdf.php';
                 
             
         } 
         
         //affiche le footer
+             if ($action!='creationPDF'){
+                 
             include './vues/v_footer.php';
+             }
        ?>
  
