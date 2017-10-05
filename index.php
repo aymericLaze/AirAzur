@@ -56,23 +56,20 @@
                 decrementerVol();
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
-                session_destroy();
+                //session_destroy();
                 break;
             case "creationPDF":
                 //créer le pdf pour la reservation correspondante
                 
                 $reservations= getLaReservation($_REQUEST["id"]);
-                include 'modele/fonctionPDF.php';
+                //include 'modele/fonctionPDF.php';
                 include 'vues/pdfReservation.php';
-                
-                
-            
+                break;  
         } 
         
         //affiche le footer
-             if ($action!='creationPDF'){
+             if ($action!="creationPDF"){
                  
             include './vues/v_footer.php';
              }
        ?>
- 
