@@ -63,28 +63,12 @@ function ajoutReservation() {
     //connexion a la bdd
     $connexion = connect();
     
-    //affectation de valeur pour l'insertion et securite
-    $_SESSION["reservation"]["idVols"] = $_SESSION["vol"]["idVol"];
-    $nom =      $_SESSION["reservation"]["nom"];
-    $prenom =   $_SESSION["reservation"]["prenom"];
-    $adresse =  $_SESSION["reservation"]["adresse"];
-    $cp =       $_SESSION["reservation"]["CP"];
-    $ville =    $_SESSION["reservation"]["ville"];
-    $tel =      $_SESSION["reservation"]["numTel"];
-    $placeRes = $_SESSION["reservation"]["placePrise"];
-    $prixTot =  $_SESSION["reservation"]["prixTotal"];
-    print_r($_SESSION["reservation"]);
     try {
-        //requete pour ajouter les réservations dans la BDD
-        /*$sql = "insert into reservation(idVols,nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal)"
-                . "values('$idVols','$nom','$prenom','$adresse',$cp,'$ville','$tel',$placeRes,$prixTot)";
-        
-        $connexion->query($sql);*/
-        
-        //securite
+        //requete securise
         $sql = "insert into reservation(nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal,idVols)"
                 . "values(:nom,:prenom,:adresse,:CP,:ville,:numTel,:placePrise,:prixTotal,:idVols)";
         
+        //ajouter les réservations dans la BDD
         $preparation = $connexion->prepare($sql);
         $preparation->execute($_SESSION["reservation"]);
         
