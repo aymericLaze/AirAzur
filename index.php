@@ -50,7 +50,16 @@
                 break;
             case "ajoutReservation":
                 //ajoute la reservation a la base de donnée
-                ajoutReservation($_SESSION["vol"]["idVol"],$_SESSION["reservation"]["nom"],$_SESSION["reservation"]["prenom"],$_SESSION["reservation"]["adresse"],$_SESSION["reservation"]["CP"],$_SESSION["reservation"]["ville"],$_SESSION["reservation"]["numTel"],$_SESSION["reservation"]["placePrise"],$_SESSION["reservation"]["prixTotal"]);
+                ajoutReservation(   $_SESSION["vol"]["idVol"],
+                                    $_SESSION["reservation"]["nom"],
+                                    $_SESSION["reservation"]["prenom"],
+                                    $_SESSION["reservation"]["adresse"],
+                                    $_SESSION["reservation"]["CP"],
+                                    $_SESSION["reservation"]["ville"],
+                                    $_SESSION["reservation"]["numTel"],
+                                    $_SESSION["reservation"]["placePrise"],
+                                    $_SESSION["reservation"]["prixTotal"]
+                                );
                 decrementerVol();
                 //ajoute la reservation dans la BDD
                 echo "Votre vol a été reservé";
