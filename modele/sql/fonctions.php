@@ -59,13 +59,25 @@ function getVols($unVol = NULL) {
 }
 
 //fonction de reservation dans la bdd
-function ajoutReservation($idVols, $nom, $prenom, $adresse, $cp, $ville, $tel, $placeRes, $prixTot) {
+function ajoutReservation() {
     //connexion a la bdd
     $connexion = connect();
+    
+    //affectation de valeur
+    $idVols = $_SESSION["vol"]["idVol"];
+    $nom = $_SESSION["reservation"]["nom"];
+    $prenom = $_SESSION["reservation"]["prenom"];
+    $adresse = $_SESSION["reservation"]["adresse"];
+    $cp = $_SESSION["reservation"]["CP"];
+    $ville = $_SESSION["reservation"]["ville"];
+    $tel = $_SESSION["reservation"]["numTel"];
+    $placeRes = $_SESSION["reservation"]["placePrise"];
+    $prixTot = $_SESSION["reservation"]["prixTotal"];
     try {
         //requete pour ajouter les réservations dans la BDD
         $sql = "insert into reservation(idVols,nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal)"
                 . "values('$idVols','$nom','$prenom','$adresse',$cp,'$ville','$tel',$placeRes,$prixTot)";
+        
         $connexion->query($sql);
     } catch (PDOException $e) {
         return "Erreur dans la requête " . $e->getMessage();
