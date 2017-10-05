@@ -7,3 +7,6 @@
 * Rajouter le mail (formulaire ++BDD)
 * mettre tout les includes a jour : "(__DIRNAME__)"
 * ajouter v_ajoutReservation.php
+* changer couleur pdf
+* dire à Eugène d'arreter de radoter
+* stocker dans session/cookie reservation de l'agence

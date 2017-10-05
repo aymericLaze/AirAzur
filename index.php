@@ -23,7 +23,7 @@
             
             case "catalogue":
                 //affiche la vue catalogue
-                $lesVols= getLesVols();
+                $lesVols = getLesVols();
                 include './vues/v_catalogue.php';
                 break;
             

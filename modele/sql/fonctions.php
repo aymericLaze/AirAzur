@@ -8,23 +8,34 @@ function getLesVols() {
 
     //creation d'un objet PDO
     $connexion = connect();
-
-    try {
-        //creation d'un tableau
-        $lesVols = array();
-        //index
-        $i = 0;
+    
+    $i = 0;
 
         //requete sql pour recuperer les vols disponible pour la reservation
-        $sql = "select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
+        $sql = "Select idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
                     from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
                     where place>0";
 
         //execution de la requete
         $resultatVol = $connexion->query($sql);
+    
+    try {
+        //creation d'un tableau
+        /*$lesVols = array();
+        //index
+        $i = 0;
+
+        //requete sql pour recuperer les vols disponible pour la reservation
+        $sql = "elect idVols, A1.ville as aeroportDepart, A2.ville as aeroportArrivee, dateDepart, dateArrivee, prix, place
+                    from vols JOIN aeroport as A1 ON vols.aeroportDepart=A1.idAeroport JOIN aeroport as A2 ON vols.aeroportArrivee=A2.idAeroport
+                    where place>0";
+*/
+        //execution de la requete
+        $resultatVol = $connexion->query($sql);
 
         //parcours des resultats et stockage dans tableau        
-        while ($unVol = $resultatVol->fetch(PDO::FETCH_ASSOC)) {
+        while ($unVol = $resultatVol->fetch(PDO::FETCH_ASSOC))
+        {
             $lesVols[$i] = $unVol;
             $i++;
         }
@@ -32,8 +43,9 @@ function getLesVols() {
         return $lesVols;
 
     }
-    catch (PDOException $e) {
-        return "Erreur dans la requête " . $e->getMessage();
+    catch (PDOException $e)
+    {
+        echo "<br />Erreur dans la requête " . $e->getMessage()."<br /><br /><br />";
     }
 }
 
