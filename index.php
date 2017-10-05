@@ -50,7 +50,7 @@
                 //calcul du prix total et ajout dans session["reservation"]
                 $_SESSION["reservation"]["prixTotal"] = prixTotal($_SESSION["reservation"]["placePrise"]);
                 //ajout de l'id du vol dans la reservation
-                $_SESSION["reservation"]["idVols"] = $_SESSION["vol"]["idVol"];
+                $_SESSION["reservation"]["idVol"] = $_SESSION["vol"]["idVol"];
                 unset($_SESSION["vol"]);
                 //affiche la vue de la validation
                 include './vues/v_validationReservation.php';
@@ -61,7 +61,7 @@
                 ajoutReservation();
                 decrementerVol();
                 echo "Votre vol a été reservé";
-                //session_destroy();
+                session_destroy();
                 break;
             
             case "creationPDF":

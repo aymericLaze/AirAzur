@@ -66,7 +66,7 @@ function ajoutReservation() {
     try {
         //requete securise
         $sql = "insert into reservation(nomClient,prenomClient,adresseClient,codePostalClient,villeClient,telClient,nbPlaceReservee,prixTotal,idVols)"
-                . "values(:nom,:prenom,:adresse,:CP,:ville,:numTel,:placePrise,:prixTotal,:idVols)";
+                . "values(:nom,:prenom,:adresse,:CP,:ville,:numTel,:placePrise,:prixTotal,:idVol)";
         
         //ajouter les réservations dans la BDD
         $preparation = $connexion->prepare($sql);
