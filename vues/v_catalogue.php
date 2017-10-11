@@ -21,7 +21,7 @@
             <td><?php echo $vol["dateArrivee"] ?></td>
             <td><?php echo $vol["prix"]." €" ?></td>
             <td><?php echo $vol["place"] ?></td>
-            <td><a href='index.php?action=formulaire&vol=<?php echo $vol["idVol"] ?>'><button>Réserver</button></a> </td>
+            <td><a href='index.php?action=formulaire&vol=<?php echo $vol["idVols"] ?>'><button>Réserver</button></a> </td>
         </tr>
         
         <?php
