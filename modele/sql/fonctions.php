@@ -117,7 +117,9 @@ function getReservations() {
 
         //requete sql pour recuperer les reservations
         $sql = "select idReservation, idVols, nomClient, prenomClient, adresseClient, codePostalClient,villeClient,telClient,prixTotal,nbPlaceReservee "
-                . "from reservation";
+                . " from reservation"
+                . " where idReservation in (".$_COOKIE['reservation'].")";
+        echo $sql;
         //creation d'un tableau
         $lesRes = array();
         //index
@@ -216,4 +218,29 @@ function initSession($nom) {
 //fonction qui ajoute un tableau dans un panier
 function ajouterAuPanier($nomSession, $tableauAjouter) {
     $_SESSION[$nomSession] = $tableauAjouter;
+}
+
+//Stockage des vols reserve par l'agence
+function ajouterAuCoockie() {
+    $idReservation = getMaxIdReservation();
+    
+    if(!isset($_COOKIE['reservation'])) {
+        setcookie('reservation',$idReservation);
+    }
+    else {
+        $valeurAStocker = $_COOKIE['reservation'] . ",".$idReservation;
+        setcookie('reservation',$valeurAStocker);
+    }
+}
+
+//retourne la plus grande cle primaire de reservation
+function getMaxIdReservation() {
+    $connexion = connect();
+    
+    $req="SELECT MAX(idReservation) as idMax FROM reservation";
+    $res = $connexion->query($req);
+    
+    $res=$res->fetch();
+    
+    return $res['idMax'];
 }
