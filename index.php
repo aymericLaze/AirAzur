@@ -1,5 +1,8 @@
 <?php
+    //sessions et cookies
     session_start();
+    setcookie("reservation");
+    
     if(!isset($_REQUEST['action'])){
         $action='accueil';
     }
