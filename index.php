@@ -1,7 +1,7 @@
 <?php
     //sessions et cookies
     session_start();
-    setcookie("reservation");
+    print_r($_COOKIE);
     
     if(!isset($_REQUEST['action'])){
         $action='accueil';
@@ -27,9 +27,13 @@
             break;
 
         case "reservation":
-            //affiche la vue reservation
-            $reservations=getReservations();
-            include './vues/v_reservation.php';
+            if(isset($_COOKIE['reservation'])) {
+                //affiche la vue reservation
+                $reservations=getReservations();
+                include './vues/v_reservation.php';
+            } else {
+                include './vues/v_zeroReservation.php';
+            }
             break;
 
         case "formulaire":
@@ -56,9 +60,10 @@
             break;
 
         case "ajoutReservation":
-            //ajoute la reservation a la base de donnée
+            //ajoute la reservation a la base de donnée et au cookie
             ajoutReservation();
-
+            ajouterAuCoockie();
+            
             echo "Votre vol a été reservé";
             session_destroy();
             break;
