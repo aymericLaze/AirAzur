@@ -1,7 +1,6 @@
 <?php
     //sessions et cookies
     session_start();
-    print_r($_COOKIE);
     
     if(!isset($_REQUEST['action'])){
         $action='accueil';

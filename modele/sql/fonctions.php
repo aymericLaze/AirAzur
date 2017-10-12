@@ -119,7 +119,6 @@ function getReservations() {
         $sql = "select idReservation, idVols, nomClient, prenomClient, adresseClient, codePostalClient,villeClient,telClient,prixTotal,nbPlaceReservee "
                 . " from reservation"
                 . " where idReservation in (".$_COOKIE['reservation'].")";
-        echo $sql;
         //creation d'un tableau
         $lesRes = array();
         //index
