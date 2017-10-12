@@ -9,7 +9,18 @@
 <div id="reservation">
     <table>
         <!-- Entete du tableau -->
-        <tr><th>Numéro de reservation</th><th>Numéro de vol</th><th>Client</th><th>Adresse</th><th>Téléphone</th><th>Nombre de place</th><th>Prix</th><th>Générer PDF</th></tr>
+        <tr>
+            <th>Numéro de reservation</th>
+            <th>Numéro de vol</th>
+            <th>Client</th>
+            <th>Adresse</th>
+            <th>Courriel</th>
+            <th>Téléphone</th>
+            <th>Nombre de place</th>
+            <th>Prix</th>
+            <th>Générer PDF</th>
+            <th>Supprimer réservation</th>
+        </tr>
         
         <!-- Affichage du tableau -->
         <?php
@@ -23,11 +34,13 @@
             <td><?php echo $res["idReservation"] ?></td>
             <td><?php echo $res["idVols"] ?></td>
             <td><?php echo $res["nomClient"]." ".$res["prenomClient"] ?></td>
+            <td>Ajouter le courriel</td>
             <td><?php echo $res["adresseClient"]." ".$res["codePostalClient"]." ".$res["villeClient"] ?></td>
             <td><?php echo $res["telClient"] ?></td>
             <td><?php echo $res["nbPlaceReservee"] ?></td>
             <td><?php echo $res["prixTotal"]." €" ?></td>
             <td><form action="./index.php?action=creationPDF&id=<?php echo $res["idReservation"]?>" method="POST"><input type="image" src="./images/icon_pdf.png" style="width: 30px; height: 30px;padding-left: 0;" onclick="submit"/></input></form></td>
+            <td><form action="./index.php?action=suppression-reservation&id=<?php echo $res["idReservation"]?>" method="POST"><input type="submit" value="Supprimer" /></form>
         </tr>
         
         
