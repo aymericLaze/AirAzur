@@ -33,6 +33,7 @@
                     include './vues/v_reservation.php';
                 }
                 else {
+                    setcookie("reservation");
                     include './vues/v_zeroReservation.php';
                 }
             } else {
