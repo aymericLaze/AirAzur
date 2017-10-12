@@ -1,7 +1,5 @@
-<?php
-?>
 
-<form action="./index.php?action=validationReservation&idVols=<?php echo $_SESSION["vol"]["idVol"] ?>" method="POST">
+<form action="./index.php?action=validationReservation&idVols=<?php echo $_SESSION["vol"]["idVols"] ?>" method="POST">
     <!-- a faire récuperer -->
     Nom :<input type="text" name="nom" value="" /><br/>
     Prénom :<input type="text" name="prenom" value="" /><br/>
