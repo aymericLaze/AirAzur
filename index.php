@@ -74,7 +74,13 @@
             $vol= getLeVol($reservations["idVols"]);
             include 'vues/pdfReservation.php';
             creerPDF($reservations,$vol);
-            break;  
+            break;
+        
+        case "suppression-reservation":
+            //supprimer une reservation du tableau
+            
+            $reservation = $_REQUEST["id"];
+            deleteVol($reservation);
     } 
 
     //affiche le footer

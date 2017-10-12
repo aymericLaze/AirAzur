@@ -243,3 +243,12 @@ function getMaxIdReservation() {
     
     return $res['idMax'];
 }
+
+//suppression d'une reservation
+function deleteVol($idRes) {
+    $connexion = connect();
+    
+    $req="delete from reservation where idReservation=".$idRes;
+
+    $connexion->exec($req);
+}
