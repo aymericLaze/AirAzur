@@ -81,6 +81,9 @@
             
             $reservation = $_REQUEST["id"];
             deleteVol($reservation);
+            
+            //redirection vers reservation
+            header('Location: index.php?action=reservation');
     } 
 
     //affiche le footer
