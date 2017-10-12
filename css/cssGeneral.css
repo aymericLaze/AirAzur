@@ -42,6 +42,12 @@ input[type="submit"]
 	width: 30%;
 }
 
+ #suppression, input[type="submit"]
+{
+	border: #DDEEFF 1px solid;
+	width: 75%;
+}
+
 #accueil {
     padding-left:50px;
 }
