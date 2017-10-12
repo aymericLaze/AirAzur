@@ -29,7 +29,12 @@
             if(isset($_COOKIE['reservation'])) {
                 //affiche la vue reservation
                 $reservations=getReservations();
-                include './vues/v_reservation.php';
+                if(count($reservations) != 0) {
+                    include './vues/v_reservation.php';
+                }
+                else {
+                    include './vues/v_zeroReservation.php';
+                }
             } else {
                 include './vues/v_zeroReservation.php';
             }
