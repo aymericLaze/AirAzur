@@ -248,7 +248,18 @@ function getMaxIdReservation() {
 function deleteVol($idRes) {
     $connexion = connect();
     
-    $req="delete from reservation where idReservation=".$idRes;
+    // recuperation du nombre de place
+    $reqPlace = "select idVols, place, nbPlaceReservee from reservation natural join vols where idReservation=".$idRes;
+    $queryNbPlace = $connexion->query($reqPlace);
+    $res = $queryNbPlace->fetch(PDO::FETCH_ASSOC);
 
+    $lesPlacesDuVol = $res['place']+$res['nbPlaceReservee'];
+    
+    // mise a jour du vols
+    $reqMAJ = 'update vols set place='.$lesPlacesDuVol.' where idVols="'.$res['idVols'].'"';
+    $connexion->exec($reqMAJ);
+    
+    // suppression du vol
+    $req="delete from reservation where idReservation=".$idRes;
     $connexion->exec($req);
 }

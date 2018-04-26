@@ -86,10 +86,10 @@
             //supprimer une reservation du tableau
             
             $reservation = $_REQUEST["id"];
-            deleteVol($reservation);
+            echo deleteVol($reservation);
             
             //redirection vers reservation
-            header('Location: index.php?action=reservation');
+            //header('Location: index.php?action=reservation');
     } 
 
     //affiche le footer
